@@ -49,7 +49,7 @@ WriteDB(c, v) == /\ db' = v
                                   
 AllDone == \A c \in CLIENTS: states[c] = "done"
 Consistency == IF AllDone THEN (cache = db \/ cache = Null) ELSE TRUE
-EventuallyCacheWritten == <>(AllDone /\ cacheWritten)
+EventuallyCacheWritten == <>(cacheWritten = TRUE)
 
 
 =============================================================================

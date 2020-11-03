@@ -9,3 +9,13 @@ client_n -->
 ```
 
 In this project, we use TLA+ to specify different cache algorithms, and use TLC to verify the consistency between cache and database.
+
+## Run
+
+Download the tla tools and use tlc to run the models. For example, to run model check on WriteInvalidateCache, run this command:
+
+```
+tlc WriteInvalidateCache
+```
+
+This should fail because it doesn't meet invariant `Consistency`.
